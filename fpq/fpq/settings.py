@@ -137,12 +137,12 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_SSL = bool(int(environ['DJANGO_EMAIL_USE_SSL']))
+EMAIL_USE_TLS = not EMAIL_USE_SSL
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' \
+    if EMAIL_USE_SSL else 'fpq_core.smtp.FpqEmailBackend'
 EMAIL_HOST = environ['DJANGO_EMAIL_HOST']
 EMAIL_PORT = environ.get('DJANGO_EMAIL_PORT', 465)
-EMAIL_STARTTLS = bool(environ['DJANGO_EMAIL_STARTTLS'])
-EMAIL_USE_SSL = bool(environ['DJANGO_EMAIL_USE_SSL'])
-EMAIL_USE_TLS = bool(environ['DJANGO_EMAIL_USE_TLS'])
 EMAIL_HOST_USER = environ['DJANGO_EMAIL_HOST_USER']
 EMAIL_HOST_PASSWORD = environ['DJANGO_EMAIL_HOST_PASSWORD']
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
