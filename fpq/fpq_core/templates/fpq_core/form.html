@@ -12,7 +12,9 @@
 
     {% block form %}{% endblock %}
 
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">
+      {% block button %}Submit{% endblock %}
+    </button>
   </form>
 {% endblock %}
 

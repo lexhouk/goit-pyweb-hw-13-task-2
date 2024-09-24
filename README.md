@@ -3,8 +3,8 @@
 ## Development
 
 ```bash
-$ git clone https://github.com/lexhouk/goit-pyweb-hw-10.git
-$ cd goit-pyweb-hw-10
+$ git clone https://github.com/lexhouk/goit-pyweb-hw-13-task-2.git
+$ cd goit-pyweb-hw-13-task-2
 $ docker compose up -d
 $ django-admin startproject fpq
 $ cd fpq
@@ -20,8 +20,8 @@ $ python manage.py makemigrations
 ## Deployment
 
 ```bash
-$ git clone https://github.com/lexhouk/goit-pyweb-hw-10.git
-$ cd goit-pyweb-hw-10
+$ git clone https://github.com/lexhouk/goit-pyweb-hw-13-task-2.git
+$ cd goit-pyweb-hw-13-task-2
 $ docker compose up -d
 $ poetry install
 $ cd fpq
